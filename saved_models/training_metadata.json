@@ -1,0 +1,12 @@
+{
+    "timestamp": "2026-05-08T11:37:21.176903",
+    "dataset": "Kaggle ULB Credit Card Fraud",
+    "legitimate_transactions": 284315,
+    "input_features": 30,
+    "standard_ae_bottleneck": 8,
+    "transformer_ae_bottleneck": 8,
+    "standard_ae_final_loss": 0.09446685016155243,
+    "standard_ae_final_val_loss": 0.11310321092605591,
+    "transformer_ae_final_loss": 0.062196455895900726,
+    "transformer_ae_final_val_loss": 0.10756596177816391
+}
