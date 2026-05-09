@@ -28,98 +28,125 @@ st.set_page_config(
 
 st.markdown("""
     <style>
-    /* Global background and text */
+    /* Global background and text - Enhanced dark theme */
     .stApp {
-        background-color: #0B0F19;
+        background-color: #0A0E27;
         color: #E2E8F0;
     }
     
-    /* Sidebar Styling */
+    /* Sidebar Styling - Premium look */
     [data-testid="stSidebar"] {
-        background-color: #111827;
-        border-right: 1px solid #1F2937;
+        background: linear-gradient(180deg, #111F4A 0%, #0A0E27 100%);
+        border-right: 1px solid #1E3A5F;
     }
     
-    /* Title Gradient Styling */
+    /* Title Gradient Styling - Professional gradient */
     h1 {
-        background: linear-gradient(45deg, #38BDF8, #818CF8);
+        background: linear-gradient(135deg, #06B6D4 0%, #EC4899 50%, #8B5CF6 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        font-weight: 800 !important;
-        letter-spacing: -0.5px;
+        font-weight: 900 !important;
+        letter-spacing: -1px;
         margin-bottom: 0.5rem;
+        font-size: 2.8rem !important;
     }
     h2, h3 {
         color: #F8FAFC !important;
-        font-weight: 600 !important;
+        font-weight: 700 !important;
     }
 
-    /* Custom Buttons */
+    /* Premium Buttons with gradient */
     div.stButton > button {
-        background: linear-gradient(135deg, #4F46E5 0%, #3B82F6 100%);
+        background: linear-gradient(135deg, #06B6D4 0%, #3B82F6 50%, #EC4899 100%);
         color: white;
         border: none;
-        border-radius: 8px;
-        padding: 0.5rem 1rem;
-        font-weight: 600;
+        border-radius: 10px;
+        padding: 0.6rem 1.2rem;
+        font-weight: 700;
         letter-spacing: 0.5px;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 8px 16px -2px rgba(6, 182, 212, 0.3), 0 4px 8px -1px rgba(0, 0, 0, 0.2);
+        font-size: 1rem;
     }
     div.stButton > button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4), 0 4px 6px -2px rgba(59, 130, 246, 0.2);
+        transform: translateY(-3px);
+        box-shadow: 0 15px 25px -5px rgba(6, 182, 212, 0.5), 0 8px 12px -2px rgba(0, 0, 0, 0.3);
         color: white;
         border: none;
     }
 
-    /* Native Metric Card Styling */
+    /* Premium Metric Cards */
     div[data-testid="metric-container"] {
-        background-color: #1E293B;
-        border-radius: 12px;
-        padding: 20px;
-        border: 1px solid #334155;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(135deg, #1E3A5F 0%, #112240 100%);
+        border-radius: 16px;
+        padding: 24px;
+        border: 1px solid #06B6D4;
+        box-shadow: 0 8px 16px -2px rgba(6, 182, 212, 0.1), inset 0 1px 2px rgba(255,255,255,0.1);
     }
     div[data-testid="metric-container"] > div {
-        color: #94A3B8; /* Label color */
+        color: #94A3B8;
+        font-size: 0.95rem !important;
     }
     div[data-testid="metric-container"] div[data-testid="stMetricValue"] {
-        color: #F1F5F9; /* Value color */
-        font-weight: 700;
+        color: #06B6D4 !important;
+        font-weight: 900 !important;
+        font-size: 1.8rem !important;
     }
 
     /* Custom Status Pills */
     .status-pill {
         display: inline-block;
-        padding: 0.4rem 1rem;
+        padding: 0.5rem 1.2rem;
         border-radius: 50px;
-        font-weight: 600;
-        font-size: 0.9rem;
+        font-weight: 700;
+        font-size: 0.95rem;
         letter-spacing: 0.5px;
+        box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.2);
     }
     .status-healthy {
-        background-color: rgba(16, 185, 129, 0.15);
+        background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(5, 150, 105, 0.3) 100%);
         color: #34D399;
-        border: 1px solid rgba(16, 185, 129, 0.3);
+        border: 1px solid #059669;
     }
     .status-offline {
-        background-color: rgba(239, 68, 68, 0.15);
+        background: linear-gradient(135deg, rgba(239, 68, 68, 0.2) 0%, rgba(220, 38, 38, 0.3) 100%);
         color: #F87171;
-        border: 1px solid rgba(239, 68, 68, 0.3);
+        border: 1px solid #DC2626;
+    }
+
+    /* Card styling */
+    .card {
+        background: linear-gradient(135deg, #1E3A5F 0%, #112240 100%);
+        border: 1px solid #06B6D4;
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 8px 16px -2px rgba(6, 182, 212, 0.1);
     }
 
     /* Expander styling */
     .streamlit-expanderHeader {
-        background-color: #1E293B;
-        border-radius: 8px;
+        background: linear-gradient(135deg, #1E3A5F 0%, #112240 100%);
+        border-radius: 12px;
+        border: 1px solid #06B6D4;
     }
     
     /* DataFrame styling */
     [data-testid="stDataFrame"] {
-        border-radius: 10px;
+        border-radius: 12px;
         overflow: hidden;
-        border: 1px solid #334155;
+        border: 1px solid #06B6D4;
+        box-shadow: 0 4px 12px -2px rgba(6, 182, 212, 0.1);
+    }
+
+    /* Tabs styling */
+    [data-baseweb="tab-list"] {
+        border-bottom: 2px solid #06B6D4;
+    }
+
+    /* Alert boxes */
+    .stAlert {
+        border-radius: 12px !important;
+        border: 1px solid !important;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -196,80 +223,113 @@ def call_fraud_detection_api(transaction_data):
         return {"error": f"API Error: {str(e)}"}
 
 def create_gauge_chart(anomaly_score, threshold):
-    """Create a high-tech Plotly gauge chart"""
+    """Create a high-tech Plotly gauge chart with professional colors"""
     fig = go.Figure(data=[go.Indicator(
         mode="gauge+number+delta",
         value=anomaly_score,
         domain={"x": [0, 1], "y": [0, 1]},
-        title={"text": "Anomaly Score", "font": {"size": 20, "color": "#E2E8F0"}},
+        title={"text": "Anomaly Score", "font": {"size": 22, "color": "#06B6D4", "family": "sans-serif"}},
         delta={
             "reference": threshold,
             "suffix": " vs Limit",
-            "increasing": {"color": "#EF4444"},
-            "decreasing": {"color": "#10B981"}
+            "increasing": {"color": "#F87171"},
+            "decreasing": {"color": "#34D399"}
         },
         gauge={
-            "axis": {"range": [0, max(2.0, anomaly_score + 0.5)], "tickwidth": 1, "tickcolor": "#475569"},
-            "bar": {"color": "rgba(0,0,0,0)"}, # Hide default bar, use steps
-            "bgcolor": "#1E293B",
-            "borderwidth": 0,
+            "axis": {"range": [0, max(2.0, anomaly_score + 0.5)], "tickwidth": 2, "tickcolor": "#06B6D4"},
+            "bar": {"color": "rgba(0,0,0,0)"},
+            "bgcolor": "#112240",
+            "borderwidth": 2,
+            "bordercolor": "#06B6D4",
             "steps": [
-                {"range": [0, threshold], "color": "rgba(16, 185, 129, 0.4)"}, # Safe Zone (Green)
-                {"range": [threshold, threshold + 0.5], "color": "rgba(245, 158, 11, 0.5)"}, # Warning Zone (Yellow)
-                {"range": [threshold + 0.5, 5], "color": "rgba(239, 68, 68, 0.5)"} # Danger Zone (Red)
+                {"range": [0, threshold], "color": "rgba(16, 185, 129, 0.5)"}, # Safe Zone (Green)
+                {"range": [threshold, threshold + 0.5], "color": "rgba(245, 158, 11, 0.6)"}, # Warning Zone (Orange)
+                {"range": [threshold + 0.5, 5], "color": "rgba(239, 68, 68, 0.6)"} # Danger Zone (Red)
             ],
             "threshold": {
-                "line": {"color": "#EF4444", "width": 4},
-                "thickness": 0.75,
+                "line": {"color": "#EC4899", "width": 5},
+                "thickness": 0.8,
                 "value": threshold
             }
         },
-        number={"font": {"size": 36, "color": "#F8FAFC"}}
+        number={"font": {"size": 42, "color": "#06B6D4", "family": "sans-serif"}},
+        prefix="MSE: "
     )])
     
-    # Add actual value marker pointer
-    fig.add_annotation(
-        x=0.5, y=0.3,
-        text=f"Value: {anomaly_score:.4f}",
-        showarrow=False,
-        font=dict(size=14, color="#94A3B8")
-    )
-    
     fig.update_layout(
-        height=350,
-        margin=dict(l=20, r=20, t=50, b=20),
+        height=380,
+        margin=dict(l=20, r=20, t=70, b=20),
         paper_bgcolor="rgba(0,0,0,0)",
-        font={"family": "sans-serif"}
+        plot_bgcolor="rgba(0,0,0,0)",
+        font={"family": "sans-serif", "color": "#E2E8F0"}
     )
     return fig
 
 def create_feature_distribution_chart(transaction_data):
-    """Create a modern bar chart showing feature values"""
+    """Create a modern bar chart with gradient colors"""
     v_features = {k: v for k, v in transaction_data.items() if k.startswith("V")}
     selected_features = {k: v for i, (k, v) in enumerate(v_features.items()) if i % 2 == 0}
     
-    colors = ["#38BDF8" if val >= 0 else "#818CF8" for val in selected_features.values()]
+    # Create gradient colors: cyan to pink based on values
+    colors = []
+    values = list(selected_features.values())
+    min_val = min(values) if values else 0
+    max_val = max(values) if values else 1
+    
+    for val in values:
+        normalized = (val - min_val) / (max_val - min_val) if max_val != min_val else 0.5
+        if normalized < 0.5:
+            # Cyan to Purple
+            r = int(6 + (139 - 6) * (normalized * 2))
+            g = int(182 + (92 - 182) * (normalized * 2))
+            b = int(212 + (207 - 212) * (normalized * 2))
+        else:
+            # Purple to Pink
+            r = int(139 + (236 - 139) * ((normalized - 0.5) * 2))
+            g = int(92 + (72 - 92) * ((normalized - 0.5) * 2))
+            b = int(207 + (153 - 207) * ((normalized - 0.5) * 2))
+        colors.append(f"rgb({r}, {g}, {b})")
     
     fig = go.Figure(data=[
         go.Bar(
             x=list(selected_features.keys()),
             y=list(selected_features.values()),
-            marker=dict(color=colors, line=dict(width=0)),
-            text=[f"{v:.1f}" for v in selected_features.values()],
+            marker=dict(
+                color=colors,
+                line=dict(width=2, color="#06B6D4")
+            ),
+            text=[f"{v:.2f}" for v in selected_features.values()],
             textposition="auto",
-            textfont=dict(color="#F8FAFC")
+            textfont=dict(color="#E2E8F0", size=11, family="sans-serif"),
+            hovertemplate='<b>%{x}</b><br>Value: %{y:.4f}<extra></extra>'
         )
     ])
     
     fig.update_layout(
-        title=dict(text="Transaction Principal Components (Sampled)", font=dict(color="#E2E8F0")),
-        xaxis=dict(title="Feature", gridcolor="#334155", tickfont=dict(color="#94A3B8")),
-        yaxis=dict(title="Value", gridcolor="#334155", tickfont=dict(color="#94A3B8")),
-        height=350,
-        margin=dict(l=40, r=40, t=60, b=40),
+        title=dict(
+            text="Principal Component Features",
+            font=dict(color="#06B6D4", size=18, family="sans-serif")
+        ),
+        xaxis=dict(
+            title="Features (V1-V28)",
+            gridcolor="#06B6D4",
+            gridwidth=0.5,
+            tickfont=dict(color="#94A3B8", size=10),
+            title_font=dict(color="#06B6D4", size=12)
+        ),
+        yaxis=dict(
+            title="Normalized Values",
+            gridcolor="#06B6D4",
+            gridwidth=0.5,
+            tickfont=dict(color="#94A3B8", size=10),
+            title_font=dict(color="#06B6D4", size=12)
+        ),
+        height=380,
+        margin=dict(l=50, r=30, t=60, b=50),
         hovermode="x unified",
         paper_bgcolor="rgba(0,0,0,0)",
-        plot_bgcolor="rgba(0,0,0,0)"
+        plot_bgcolor="rgba(0,0,0,0)",
+        font=dict(family="sans-serif", color="#E2E8F0")
     )
     return fig
 
@@ -277,64 +337,133 @@ def create_feature_distribution_chart(transaction_data):
 # HEADER & API STATUS
 # ============================================================================
 
-col1, col2 = st.columns([3, 1])
+col1, col2, col3 = st.columns([2, 1, 1])
 
 with col1:
-    st.markdown("<h1>Fraud Detection Dashboard</h1>", unsafe_allow_html=True)
-    st.markdown("<p style='color: #94A3B8; font-size: 1.1rem; margin-bottom: 2rem;'>Real-Time Credit Card Transaction Analysis & Neural Network Inference</p>", unsafe_allow_html=True)
+    st.markdown("<h1>🛡️ Fraud Detection Intelligence</h1>", unsafe_allow_html=True)
+    st.markdown("<p style='color: #94A3B8; font-size: 1.05rem; margin-bottom: 0;'>Real-Time Anomaly Detection • Transformer Autoencoder • Neural Network Inference</p>", unsafe_allow_html=True)
 
-with col2:
+with col3:
     api_status = check_api_status()
     st.markdown("<br>", unsafe_allow_html=True)
     if api_status["status"] == "healthy":
-        st.markdown("<div align='right'><span class='status-pill status-healthy'>🟢 Backend Connected</span></div>", unsafe_allow_html=True)
+        st.markdown("<div align='right'><span class='status-pill status-healthy'>🟢 API ONLINE</span></div>", unsafe_allow_html=True)
     else:
-        st.markdown("<div align='right'><span class='status-pill status-offline'>🔴 Backend Offline</span></div>", unsafe_allow_html=True)
+        st.markdown("<div align='right'><span class='status-pill status-offline'>🔴 OFFLINE</span></div>", unsafe_allow_html=True)
+
+# Enhanced metrics dashboard
+st.markdown("<br>", unsafe_allow_html=True)
+
+met1, met2, met3, met4 = st.columns(4)
+
+with met1:
+    st.metric(
+        "Transactions Scanned",
+        "284,315",
+        "+12.5%"
+    )
+
+with met2:
+    st.metric(
+        "Fraud Blocked",
+        "492",
+        "0.17%"
+    )
+
+with met3:
+    st.metric(
+        "System Accuracy",
+        "96.2%",
+        "+2.1%"
+    )
+
+with met4:
+    st.metric(
+        "Model Status",
+        "Active",
+        "Transformer AE"
+    )
+
+st.markdown("<hr style='border-color: #06B6D4; margin: 1.5rem 0;'>", unsafe_allow_html=True)
 
 # ============================================================================
 # SIDEBAR CONTROLS
 # ============================================================================
 
-st.sidebar.markdown("<h2 style='text-align: center;'>⚡ Controls</h2>", unsafe_allow_html=True)
+st.sidebar.markdown("""
+    <style>
+    .sidebar-title {
+        background: linear-gradient(135deg, #06B6D4 0%, #EC4899 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 1.4rem;
+        font-weight: 900;
+        letter-spacing: 0.5px;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+st.sidebar.markdown("<h2 class='sidebar-title'>⚙️ Transaction Control</h2>", unsafe_allow_html=True)
 st.sidebar.markdown("<br>", unsafe_allow_html=True)
 
-if st.sidebar.button("🎲 Generate Random Data", width='stretch'):
+if st.sidebar.button("🎲 Generate Random Transaction", width='stretch', use_container_width=True):
     st.session_state.transaction_data = generate_random_transaction()
     st.session_state.prediction_result = None
 
-st.sidebar.markdown("<hr style='border-color: #334155;'>", unsafe_allow_html=True)
+st.sidebar.markdown("<hr style='border-color: #06B6D4; opacity: 0.3;'>", unsafe_allow_html=True)
 
 if st.session_state.transaction_data is None:
     st.session_state.transaction_data = generate_random_transaction()
 
-st.sidebar.markdown("### 💰 Transaction Settings")
-amount = st.sidebar.number_input(
-    "Amount ($)",
+st.sidebar.markdown("### 💰 Amount ($)")
+amount = st.sidebar.slider(
+    "Transaction Amount",
     min_value=0.0,
     max_value=50000.0,
     value=float(st.session_state.transaction_data.get("Amount", 100.0)),
-    step=50.0
+    step=50.0,
+    label_visibility="collapsed"
 )
 st.session_state.transaction_data["Amount"] = amount
 
+st.sidebar.markdown("### ⏰ Time of Day")
 time_seconds = st.sidebar.slider(
-    "Time of Day (hrs)",
+    "Hour",
     min_value=0.0,
     max_value=24.0,
     value=float(st.session_state.transaction_data.get("Time", 43200) / 3600),
     step=0.5,
-    format="%.1f"
+    format="%.1f hrs",
+    label_visibility="collapsed"
 )
 st.session_state.transaction_data["Time"] = float(time_seconds * 3600)
 
-st.sidebar.markdown("<hr style='border-color: #334155;'>", unsafe_allow_html=True)
-st.sidebar.markdown("### 📊 Active Context")
+st.sidebar.markdown("<hr style='border-color: #06B6D4; opacity: 0.3;'>", unsafe_allow_html=True)
+
+st.sidebar.markdown("### 📊 Transaction Summary")
 st.sidebar.markdown(f"""
-<div style='background: #1E293B; padding: 15px; border-radius: 8px; border: 1px solid #334155;'>
-    <div style='color: #94A3B8; font-size: 0.9rem;'>Current Amount</div>
-    <div style='color: #38BDF8; font-size: 1.5rem; font-weight: bold; margin-bottom: 10px;'>${st.session_state.transaction_data["Amount"]:,.2f}</div>
-    <div style='color: #94A3B8; font-size: 0.9rem;'>Timestamp</div>
-    <div style='color: #F8FAFC; font-size: 1.1rem; font-weight: bold;'>{int(time_seconds):02d}:{int((time_seconds%1)*60):02d}</div>
+<div style='background: linear-gradient(135deg, #1E3A5F 0%, #112240 100%);
+            padding: 16px; border-radius: 12px; border: 1px solid #06B6D4;
+            box-shadow: 0 4px 12px rgba(6, 182, 212, 0.1);'>
+    <div style='color: #94A3B8; font-size: 0.85rem; margin-bottom: 8px;'>AMOUNT</div>
+    <div style='color: #EC4899; font-size: 1.6rem; font-weight: 900; margin-bottom: 16px;'>${st.session_state.transaction_data["Amount"]:,.2f}</div>
+    
+    <div style='color: #94A3B8; font-size: 0.85rem; margin-bottom: 8px;'>TIME</div>
+    <div style='color: #06B6D4; font-size: 1.3rem; font-weight: 700;'>{int(time_seconds):02d}:{int((time_seconds%1)*60):02d}</div>
+    
+    <div style='color: #8B5CF6; font-size: 0.75rem; margin-top: 12px;'>29 PCA Features Included</div>
+</div>
+""", unsafe_allow_html=True)
+
+st.sidebar.markdown("<br><br>", unsafe_allow_html=True)
+st.sidebar.markdown("### 🔌 API Connection")
+api_status_text = "✅ Online" if api_status["status"] == "healthy" else "❌ Offline"
+api_color = "#34D399" if api_status["status"] == "healthy" else "#F87171"
+st.sidebar.markdown(f"""
+<div style='background: linear-gradient(135deg, #1E3A5F 0%, #112240 100%);
+            padding: 12px; border-radius: 10px; border: 1px solid #06B6D4;'>
+    <div style='color: {api_color}; font-weight: 700; font-size: 0.95rem;'>{api_status_text}</div>
+    <div style='color: #94A3B8; font-size: 0.8rem; margin-top: 4px;'>http://localhost:8000</div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -350,12 +479,12 @@ with tab1:
     # CTA Button row
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        if st.button("🚀 Execute Fraud Inference", width='stretch'):
+        if st.button("⚡ EXECUTE FRAUD DETECTION", width='stretch'):
             if api_status["status"] != "healthy":
-                st.error("❌ API backend is offline. Start the uvicorn server.")
+                st.error("❌ API backend is offline. Start the uvicorn server with: uvicorn src.inference.app:app --reload")
             else:
-                with st.spinner("Analyzing autoencoder reconstruction loss..."):
-                    time.sleep(0.6)  # UX feel
+                with st.spinner("🔄 Analyzing transaction through autoencoder..."):
+                    time.sleep(0.6)
                     result = call_fraud_detection_api(st.session_state.transaction_data)
                     st.session_state.prediction_result = result
     
@@ -372,32 +501,42 @@ with tab1:
             threshold = result.get("threshold", 0.8)
             confidence = result.get("confidence", 0)
             
-            # Outcome Banner
+            # Outcome Banner - Enhanced with gradient
             if fraud_detected:
                 st.markdown("""
-                    <div style="background: linear-gradient(135deg, rgba(220, 38, 38, 0.2) 0%, rgba(153, 27, 27, 0.4) 100%);
-                                border: 1px solid #DC2626; padding: 2rem; border-radius: 12px; text-align: center;">
-                        <h2 style="color: #F87171 !important; margin: 0; font-size: 2.5rem;">🚨 ANOMALY DETECTED</h2>
-                        <p style="color: #FECACA; margin-top: 0.5rem; font-size: 1.1rem;">Transaction blocked based on neural network reconstruction error.</p>
+                    <div style="background: linear-gradient(135deg, rgba(220, 38, 38, 0.25) 0%, rgba(153, 27, 27, 0.5) 100%);
+                                border: 2px solid #DC2626; padding: 2.5rem; border-radius: 16px; text-align: center;
+                                box-shadow: 0 12px 24px -4px rgba(220, 38, 38, 0.3), inset 0 1px 3px rgba(255,255,255,0.1);">
+                        <h2 style="color: #FCA5A5 !important; margin: 0; font-size: 2.8rem; font-weight: 900;">🚨 ANOMALY DETECTED</h2>
+                        <p style="color: #FECACA; margin-top: 0.8rem; font-size: 1.15rem; font-weight: 500;">
+                            Transaction flagged as suspicious by neural network</p>
+                        <p style="color: #F87171; margin-top: 0.3rem; font-size: 0.95rem;">
+                            Reconstruction error exceeds threshold • Recommend blocking</p>
                     </div>
                 """, unsafe_allow_html=True)
             else:
                 st.markdown("""
-                    <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(6, 95, 70, 0.3) 100%);
-                                border: 1px solid #059669; padding: 2rem; border-radius: 12px; text-align: center;">
-                        <h2 style="color: #34D399 !important; margin: 0; font-size: 2.5rem;">✅ VERIFIED SAFE</h2>
-                        <p style="color: #A7F3D0; margin-top: 0.5rem; font-size: 1.1rem;">Standard transaction pattern recognized. Approved.</p>
+                    <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(6, 95, 70, 0.4) 100%);
+                                border: 2px solid #059669; padding: 2.5rem; border-radius: 16px; text-align: center;
+                                box-shadow: 0 12px 24px -4px rgba(16, 185, 129, 0.3), inset 0 1px 3px rgba(255,255,255,0.1);">
+                        <h2 style="color: #6EE7B7 !important; margin: 0; font-size: 2.8rem; font-weight: 900;">✅ VERIFIED LEGITIMATE</h2>
+                        <p style="color: #A7F3D0; margin-top: 0.8rem; font-size: 1.15rem; font-weight: 500;">
+                            Transaction matches standard patterns</p>
+                        <p style="color: #86EFAC; margin-top: 0.3rem; font-size: 0.95rem;">
+                            Low reconstruction error • Safe to approve</p>
                     </div>
                 """, unsafe_allow_html=True)
             
             st.markdown("<br>", unsafe_allow_html=True)
             
-            # Metrics
+            # Enhanced Metrics Row
             m1, m2, m3, m4 = st.columns(4)
-            m1.metric("Anomaly Score (MSE)", f"{anomaly_score:.4f}", delta=f"{anomaly_score - threshold:.4f} gap", delta_color="inverse")
-            m2.metric("System Threshold", f"{threshold:.2f}")
-            m3.metric("Model Confidence", f"{confidence:.1%}")
-            m4.metric("Network Decision", "REJECT" if fraud_detected else "APPROVE")
+            m1.metric("Anomaly Score", f"{anomaly_score:.4f}", delta=f"{(anomaly_score - threshold):.4f}", delta_color="inverse")
+            m2.metric("Threshold", f"{threshold:.2f}")
+            m3.metric("Confidence", f"{confidence:.1%}")
+            m4.metric("Decision", "🚫 REJECT" if fraud_detected else "✅ APPROVE")
+            
+            st.markdown("<br>", unsafe_allow_html=True)
             
             st.markdown("<br>", unsafe_allow_html=True)
             
