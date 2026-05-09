@@ -228,7 +228,7 @@ def create_gauge_chart(anomaly_score, threshold):
         mode="gauge+number+delta",
         value=anomaly_score,
         domain={"x": [0, 1], "y": [0, 1]},
-        title={"text": "Anomaly Score", "font": {"size": 22, "color": "#06B6D4", "family": "sans-serif"}},
+        title={"text": "Anomaly Score (MSE)", "font": {"size": 22, "color": "#06B6D4", "family": "sans-serif"}},
         delta={
             "reference": threshold,
             "suffix": " vs Limit",
@@ -252,8 +252,7 @@ def create_gauge_chart(anomaly_score, threshold):
                 "value": threshold
             }
         },
-        number={"font": {"size": 42, "color": "#06B6D4", "family": "sans-serif"}},
-        prefix="MSE: "
+        number={"font": {"size": 42, "color": "#06B6D4", "family": "sans-serif"}}
     )])
     
     fig.update_layout(
